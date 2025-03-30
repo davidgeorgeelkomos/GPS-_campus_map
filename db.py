@@ -40,3 +40,4 @@ class DB:
 
     def __del__(self):
         self.__db_con.close()
+
