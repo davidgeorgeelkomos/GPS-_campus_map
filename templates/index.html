@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>FlaskTest</title>
-</head>
-<body>
-   <h2>Welcome To GFG</h2>
-   <h4>Flask: Rendering Templates</h4>
-   <a href="/home">Home</a>
-   <a href="/">Index</a>
-   <a href="/login">login</a>
-   <a href="/signup">signup</a>
-   
-   <p>This is a home page</p>
-   <p>must use extends not include</p>
-   <title>Hello from Flask</title>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-   <!-- Form to input the user's name -->
-   <form method="POST" action="/">
-       <label for="name">Enter your name:</label>
-       <input type="text" id="name" name="name" required>
-       <button type="submit">Submit</button>
-   </form>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
 
-   {% if person %}
-     <h1>Hello {{ person }}!</h1>
-   {% else %}
-     <h1>Hello, World!</h1>
-   {% endif %}
-</body>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+        <title>Campus Map</title>
+    </head>
+
+    <body>
+       <h2>Welcome To GFG</h2>
+       <h4>Flask: Rendering Templates</h4>
+       <a href="/home">Home</a>
+       <a href="/">Index</a>
+       <a href="/login">login</a>
+       <a href="/signup">signup</a>
+       
+       <p>This is a home page</p>
+       <p>must use extends not include</p>
+       <title>Hello from Flask</title>
+
+       <!-- Form to input the user's name -->
+       <form method="POST" action="/">
+           <label for="name">Enter your name:</label>
+           <input type="text" id="name" name="name" required>
+           <button type="submit">Submit</button>
+       </form>
+
+       {% if person %}
+         <h1>Hello {{ person }}!</h1>
+       {% else %}
+         <h1>Hello, World!</h1>
+       {% endif %}
+
+        <div id="map"></div>
+    </body>
 </html>

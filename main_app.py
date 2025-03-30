@@ -1,4 +1,7 @@
+import os
+
 from flask import Flask, render_template, request
+
 from db import DB
 
 app = Flask(__name__)
@@ -41,4 +44,8 @@ def login():
     return render_template("login.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(
+        host="0.0.0.0",
+        debug=True,
+        ssl_context='adhoc',
+    )
