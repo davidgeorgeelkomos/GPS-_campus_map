@@ -27,11 +27,17 @@ def signup():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    db = DB()  # Assuming you have a database class
     if request.method == "POST":
         username = request.form.get("username")
         password = request.form.get("password")
-        # Here you would typically check the user against the database
-        return render_template("login.html", message="Login successful!")
+        
+        # Example: Check against a hardcoded username and password
+        if username == "admin" and password == "password123":
+            return render_template("login.html", message="Login successful!")
+        else:
+            return render_template("login.html", message="Wrong username or password!")
+    
     return render_template("login.html")
 
 if __name__ == "__main__":
