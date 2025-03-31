@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Signup Page</title>
+    {% include "links.html" %}
 </head>
 <body>
     <h2>Signup</h2>
@@ -14,11 +15,6 @@
         <br><br>
         <button type="submit">Signup</button>
     </form>
-
-    {% if message %}
-        <p>{{ message }}</p>
-    {% endif %}
-
     <a href="/">Back to Home</a>
 </body>
 </html>

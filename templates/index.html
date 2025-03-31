@@ -17,16 +17,12 @@
     </head>
 
     <body>
-       <h2>Welcome To GFG</h2>
-       <h4>Flask: Rendering Templates</h4>
-       <a href="/home">Home</a>
-       <a href="/">Index</a>
-       <a href="/login">login</a>
-       <a href="/signup">signup</a>
+        <h1>Welcome To Campus map</h1>
+        {% include "links.html" %}
+       <h4>EL Sel3 project</h4>
        
        <p>This is a home page</p>
-       <p>must use extends not include</p>
-       <title>Hello from Flask</title>
+       <p>Still working on it</p>
 
        <!-- Form to input the user's name -->
        <form method="POST" action="/">
@@ -34,12 +30,6 @@
            <input type="text" id="name" name="name" required>
            <button type="submit">Submit</button>
        </form>
-
-       {% if person %}
-         <h1>Hello {{ person }}!</h1>
-       {% else %}
-         <h1>Hello, World!</h1>
-       {% endif %}
 
         <div id="map"></div>
     </body>
