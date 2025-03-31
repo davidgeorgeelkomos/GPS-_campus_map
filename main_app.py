@@ -66,7 +66,7 @@ def login():
             user_login(user[0])
             return redirect(url_for("index"))
         
-    return render_template("login.html", message=message)
+    return render_template("login.html", message=message, user=current_user)
 
 @app.route("/logout")
 @login_required

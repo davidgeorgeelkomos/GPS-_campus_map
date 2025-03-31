@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Signup Page</title>
-    {% include "links.html" %}
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}signup{% endblock %}
+{% block content %}
     <h2>Signup</h2>
     <form method="POST" action="/signup">
         <label for="username">Username:</label>
@@ -16,5 +13,4 @@
         <button type="submit">Signup</button>
     </form>
     <a href="/">Back to Home</a>
-</body>
-</html>
+{% endblock %}
