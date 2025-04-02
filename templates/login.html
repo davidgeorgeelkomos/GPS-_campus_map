@@ -1,19 +1,25 @@
 {% extends 'base.html' %}
 
-{% block title %}login{% endblock %}
-{% block content %}
+{% block title %}Login{% endblock %}
 
-    <h1>Login</h1>    
-    <form method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <button type="submit">Login</button>
-    </form>
-    {% if message %}
-        <p>{{ message }}</p>
-    {% endif %}
+{% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-lg">
+        <h1 class="text-center">Login</h1>
+        <form method="POST">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username:</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 rounded-pill">Login</button>
+        </form>
+        {% if message %}
+            <p class="text-danger mt-3 text-center">{{ message }}</p>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}
