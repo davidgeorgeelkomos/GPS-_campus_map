@@ -1,10 +1,29 @@
 /*#map { height: 480px; }*/
 
 body {
-    padding: 0;
+    padding-top: 70px; /* Prevent content from hiding under navbar */
     margin: 0;
 }
 html, body, #map {
     height: 100%;
     width: 100vw;
+}
+
+.nav-link {
+    color: black;
+    text-align: center;
+    text-shadow: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: orange;
+}
+
+.navbar-logo {
+    height: 40px;
+}
+
+.menu-icon {
+    height: 30px;
 }
