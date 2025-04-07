@@ -60,7 +60,7 @@ def login():
         user = db.get_user(username)
         if user is None:
             message = "User not found"
-        elif user[2] != password: 
+        elif user[2] != password:
             message = "Incorrect password"
         else:
             user_login(user[0])
@@ -74,7 +74,7 @@ def logout():
     logout_user()
     return redirect(url_for("login"))
             
-def user_login(user_id):  
+def user_login(user_id):
     user_obj = User()
     user_obj.id = user_id
     login_user(user_obj)
